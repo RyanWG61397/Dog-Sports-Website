@@ -1,0 +1,421 @@
+/* Simple wireframe look */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    
+    /* background-color: #f0e369; /* AFFECTS ENTIRE PAGE */
+    /* background-color: #e9edf2; */
+    /* background-color: #d369f0; */
+    /* background-color: #fa9e8b */
+    background-color: #e9a5f5;
+}
+
+/* Body styling */
+.page {
+    width: 90;
+    margin: 0 auto;
+
+    /* Page layout stack */
+    display: grid;
+    gap: 12px;
+    padding: 12px 0;
+}
+
+/* Shared box styling */
+.box {
+    border: 2px solid #000;
+    padding: 18px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.cards {
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+    background: rgba(255, 255, 255, 0.85);
+    padding: 14px;
+}
+
+.cards ul {
+    margin: 8px 0 0 18px;
+}
+
+.cards li {
+    margin: 6px 0;
+}
+
+.row_one h1 {
+    color: #f7da31;
+    font-weight: bold;
+    text-shadow: 2px 4px 1px rgba(0, 0, 0, 0.3);
+}
+
+.row_two h1 {
+    color: #b447cf;
+    font-weight: bold;
+    text-shadow: 2px 4px 1px rgba(0, 0, 0, 0.3);
+
+}
+
+/* Each 3-column row */
+.row_one {
+    display: grid;
+    gap: 12px;
+
+    /* 1/4, 2/4, 1/4 size for column */
+    grid-template-columns: 1fr 2fr 1fr;
+    color: black;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    font-family: monospace;
+    padding: 12px;
+}
+
+.box_one_about {
+    background-color: #f5f0a5;
+    padding-left: 12px;
+    border-radius: 12px;
+    padding-bottom: 18px;
+}
+
+.box_one_awards {
+
+    /* background-color: #f0e369; */
+    background-color: #f5f0a5;
+
+    padding-left: 12px;
+
+    border-radius: 12px;
+
+    padding-bottom: 18px;
+}
+
+.box_two_about {
+    background-color: #e9a5f5;
+    padding-left: 12px;
+
+    border-radius: 12px;
+
+    padding-bottom: 18px;
+}
+
+.box_two_awards {
+    background-color: #e9a5f5;
+
+    padding-left: 12px;
+
+    border-radius: 12px;
+
+    padding-bottom: 18px;
+}
+
+.row_two {
+    display: grid;
+    gap: 12px;
+
+    /* 1/4, 2/4, 1/4 size for column */
+    grid-template-columns: 1fr 2fr 1fr;
+
+    color: black;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    font-family: monospace;
+    padding: 12px;
+}
+
+nav ul {
+    list-style-type: none;
+    list-style-image: none;
+
+    margin: 0;
+    padding: 10px;
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    float: left;
+}
+
+nav ul li a {
+    display: inline-block;
+
+    color: antiquewhite;
+    width: 175px;
+    padding: 0.5em 0;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    border-radius: 999px;
+    border: 2px solid rgba(0, 0, 0, 0.35);
+    background-color: #d369f0;
+    box-shadow: 2px 2px #773996;
+    /* box-shadow: 2px 2px rgb(135, 115, 0); */
+    font-size: 16px;
+    /* text-shadow: 0 0 10px rgba(255, 255, 255, 0.6); */ /* glowing effect */
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+    
+}
+
+nav ul li a:active {
+    color:gray;
+}
+
+nav {
+    /* background-color: rgb(241, 206, 3); */
+    align-items: center;
+    padding: 10px 0;
+    border-top: 4px solid rbga(0, 0, 0, 0.25);
+    border-bottom: 4px solid rgba(0, 0, 0, 0.25);
+    /* border: 2px solid #000; */
+}
+
+nav a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+}
+
+nav a:active {
+    transform: translateY(0px);
+    box-shadow: none;
+}
+
+
+/* HEADER STYLING */
+
+.header {                   /* Layout and Background styling */
+    display: flex;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(190deg, #d369f0, #f7da31);
+    text-align: center;
+    border: 2px solid #000;
+    border-radius: 12px 12px 0 0;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35); /* Adds subtle header box shadow */
+    border-bottom: 6px solid #773996;
+    margin-bottom: 30px;
+}
+
+.header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("/IMAGES/pawprint.PNG") repeat;
+    background-size: 160px;
+    opacity: 0.04;
+
+    z-index: 0;
+    pointer-events: none;
+}
+
+.header-inner {     /* Alignment styling */
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    position: relative;
+    z-index: 1;
+}
+
+.header h1 {
+    font-family: "Bitcount Grid SIngle", "consolas";
+    letter-spacing: 1px;
+    margin: 0;
+    color: white;
+    line-height: 1;
+    padding-left: 60px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.6); /* glowing effect */
+    /* text-shadow: 3px 2=3px 6px rgba(0, 0, 0, 0.4); */
+}
+
+.logo {
+    display: block;
+    width: auto;
+    /* height: 120px; */
+    height: 200px;
+    filter: drop-shadow(0, 4px 8px rgba(0, 0, 0, 0.4));
+}
+
+.tagline {
+    margin: 0;
+    color: antiquewhite;
+    font-size: 20px;
+    letter-spacing: 2px;
+    opacity: 0.85;
+
+}
+
+.intro {
+    padding: 2px 5px;
+    border: 2px solid #000;
+    border-radius: 12px 12px 0 0;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35); /* Adds subtle header box shadow */
+    border-bottom: 6px solid #71168a;
+    margin-bottom: 80px;
+    margin-top: 80px;
+
+    background-color: #b447cf;
+ 
+}
+
+.intro h1 {
+    font-size: 42px;
+    font-family: monospace;
+    letter-spacing: 2px;
+    color: antiquewhite;
+    text-align: center;
+
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.6); /* glowing effect */
+}
+
+.calyback img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 4px ridge purple;
+    border-radius: 12px;
+    box-shadow: 2px 1px black;
+    display: block;
+}
+
+.motz img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 4px ridge yellow;
+    border-radius: 2.5;
+    box-shadow: 2px 1px black;
+    display: block;
+}
+
+
+
+/*
+    Footer styling
+*/
+
+footer {
+    clear: both;
+    width: 100%;
+    color: antiquewhite;
+
+    background-color: #b447cf;
+
+    width: 100%;
+
+    border: 2px solid #000;
+    border-radius: 12px 12px 0 0;
+
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35); /* Adds subtle header box shadow */
+    border-bottom: 6px solid #71168a;
+    padding: 4px;
+    margin-top: 30px;
+}
+
+footer a {
+    color: #e9a5f5;
+    text-align: left;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #f7da31;
+}
+
+footer img {
+    border: 4px ridge gold;
+    border-radius: 6em;
+    box-shadow: 2px 1px darkslategray;
+
+    float: left;
+    width: 125px;
+    height: 125px;
+    margin-right: 40px;
+    margin-top: 12px;
+}
+
+/* Desktop only styling */
+@media (min-width: 701px) {
+    
+    .header h1 {
+    font-size: 56px;
+    padding: 8px 20px;
+}
+
+.tagline {
+    padding-left: 50px;
+}
+}
+
+/* Mobile: stack the 3 columns */
+@media (max-width: 700px) {
+    .page {
+        width: 94%;
+    }
+
+    .row {
+        grid-template-columns: 1fr; /* Stack */
+    }
+
+    nav ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        justify-items: stretch;
+    }
+
+    nav a {
+        text-align: center;
+        width: 100%;
+
+        position: relative;
+    }
+
+    nav a:after {
+        content: "";
+        position: absolute;
+        left: 14px;
+        right: 14px;
+        bottom: 6px;
+        height: 3px;
+        opacity: 0;
+        border-radius: 999px;
+    }
+
+    nav a:hover::after {
+        opacity: 1;
+    }
+
+    .header{
+        min-width: 400px;
+    }
+
+    .header h1 {
+        font-size: 32px;
+        padding-right: 10px;
+    }
+
+    .calyback img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 4px ridge purple;
+    border-radius: 12px;
+    box-shadow: 2px 1px black;
+    /* display: block; */
+
+     display: flex;
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 0;
+    min-width: 400px;
+    min-height: 400px;
+}
+}
